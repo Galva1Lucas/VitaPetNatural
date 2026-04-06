@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitaPet Natural - Fórmula Premium para Cães</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR CENTRALIZADA ESTILO PROFISSIONAL */
+        .navbar {
+            background: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            min-height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a1a1a;
+            text-transform: lowercase;
+            letter-spacing: -1px;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .logo span {
+            font-weight: 300;
+        }
+
+        .nav-icons {
+            position: absolute;
+            right: 1.5rem;
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .nav-icons img {
+            opacity: 0.8;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            display: block;
+        }
+
+        .nav-icons span {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-icons span:hover img {
+            opacity: 1;
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 20px;
+            }
+            .nav-icons {
+                gap: 0.8rem;
+                right: 1rem;
+            }
+            .nav-icons img {
+                width: 20px;
+            }
+        }
+
+        /* BANNER TOPO */
+        .top-banner {
+            background: linear-gradient(135deg, #1a3a5c 0%, #2d5a8c 100%);
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 0;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 450px;
+            background: #eee;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            color: #1a1a1a;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
+        }
+
+        .arrow-left { 
+            left: 15px; 
+        }
+
+        .arrow-right { 
+            right: 15px; 
+        }
+
+        .nav-arrow:hover { 
+            background: rgba(255, 255, 255, 1); 
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-images {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: flex-start;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 10px;
+        }
+
+        .carousel-images::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        .carousel-images::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+
+        .carousel-img {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .carousel-img.active {
+            border-color: #00a86b;
+        }
+
+        .carousel-img:hover {
+            border-color: #00a86b;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            color: #ffb800;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .review-count {
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .product-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #1a1a1a;
+        }
+
+        .product-subtitle {
+            color: #1a1a1a;
+            font-size: 16px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 1.2rem;
+        }
+
+        .benefits {
+            background: #f9f9f9;
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.9rem;
+            align-items: flex-start;
+        }
+
+        .benefit-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .check-icon {
+            color: #00a86b;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 1px;
+            font-size: 18px;
+        }
+
+        .benefit-text {
+            font-size: 15px;
+            color: #1a1a1a;
+        }
+
+        /* PREÇO */
+        .price-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .price-current {
+            font-size: 32px;
+            font-weight: 700;
+            color: #00a86b;
+        }
+
+        .price-original {
+            font-size: 18px;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: #6b4fbb;
+            color: white;
+            padding: 0.5rem 0.9rem;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* QUANTIDADE */
+        .quantity-selector {
+            margin-bottom: 1.5rem;
+        }
+
+        .quantity-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            font-size: 14px;
+        }
+
+        .quantity-select {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1.5rem;
+            padding-right: 2.5rem;
+        }
+
+        /* BOTÃO */
+        .cta-button {
+            width: 100%;
+            padding: 1.1rem;
+            background: #00a86b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #008855;
+        }
+
+        .float-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .float-button:hover {
+            transform: scale(1.1);
+        }
+
+        .float-button img {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* INFO ICONS */
+        .info-icons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            text-align: center;
+            padding-top: 1.2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .info-icon-item {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 0.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* SEÇÃO VETERINÁRIA - COM IMAGEM REAL */
+        .expert-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .expert-image {
+            width: 100%;
+            height: 300px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .expert-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .expert-content h2 {
+            font-size: 22px;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .expert-content p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .expert-signature {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid #eee;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 14px;
+        }
+
+        /* AVALIAÇÕES GRÁFICO */
+        .reviews-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .reviews-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .rating-summary {
+            text-align: center;
+        }
+
+        .rating-average {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-stars {
+            color: #ffb800;
+            font-size: 20px;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .rating-count {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .rating-bars {
+            margin-top: 1.5rem;
+        }
+
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .rating-bar-label {
+            font-size: 13px;
+            color: #666;
+            width: 80px;
+            text-align: left;
+        }
+
+        .rating-bar-progress {
+            flex: 1;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .rating-bar-fill {
+            height: 100%;
+            background: #ffb800;
+        }
+
+        .reviews-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .review-item {
+            padding: 1.2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .review-avatar {
+            width: 45px;
+            height: 45px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .review-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .review-info {
+            flex: 1;
+        }
+
+        .review-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.3rem;
+        }
+
+        .review-stars {
+            color: #ffb800;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .review-date {
+            font-size: 12px;
+            color: #999;
+            margin-top: 0.3rem;
+        }
+
+        .review-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* CLIENTE PHOTOS - COM IMAGENS REAIS */
+        .client-photos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .client-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .client-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* SEÇÃO TWO COLUMN - COM IMAGEM REAL */
+        .two-column-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .two-column-image {
+            width: 100%;
+            height: 280px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .two-column-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .two-column-content h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .two-column-content p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .two-column-content strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        /* BENEFÍCIOS 5 ITENS */
+        .five-benefits {
+            background: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .five-benefits-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+        }
+
+        .five-benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .five-benefits-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .benefit-item-large {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .benefit-number {
+            background: #00a86b;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .benefit-item-large h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: #1a1a1a;
+        }
+
+        .benefit-item-large p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .five-benefits-image {
+            width: 100%;
+            height: 350px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .five-benefits-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* INGREDIENTES */
+        .ingredients-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .ingredients-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .ingredient-card {
+            text-align: center;
+        }
+
+        .ingredient-icon {
+            width: 100px;
+            height: 100px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ingredient-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ingredient-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .ingredient-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .faq-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            background: #f9f9f9;
+            padding: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: #f0f0f0;
+        }
+
+        .faq-toggle {
+            font-size: 18px;
+            transition: transform 0.3s;
+            color: #00a86b;
+        }
+
+        .faq-toggle.open {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 1.2rem;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+            display: none;
+            background: #fafafa;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .faq-answer.open {
+            display: block;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1a3a5c;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-size: 18px;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        footer a {
+            color: #00a86b;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            font-size: 13px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+            overflow: hidden;
+        }
+
+        .social-link img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .social-link:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .expert-section,
+            .reviews-grid,
+            .two-column-section,
+            .five-benefits-grid,
+            .ingredients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-icons,
+            .client-photos {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .product-title {
+                font-size: 24px;
+            }
+
+            .price-current {
+                font-size: 28px;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .nav-icons {
+                gap: 1rem;
+                font-size: 18px;
+            }
+
+            .float-button {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section,
+            .expert-section,
+            .reviews-section,
+            .two-column-section,
+            .five-benefits,
+            .ingredients-section,
+            .faq-section {
+                padding: 1.5rem 1rem;
+            }
+
+            .reviews-grid {
+                gap: 1.5rem;
+            }
+
+            .info-icons,
+            .client-photos {
+                grid-template-columns: 1fr;
+            }
+
+            .ingredients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .five-benefits-image,
+            .expert-image,
+            .two-column-image {
+                height: 250px;
+            }
+
+            .product-title {
+                font-size: 20px;
+            }
+
+            .price-current {
+                font-size: 24px;
+            }
+
+            footer {
+                padding: 2rem 1rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP BANNER -->
+    <div class="top-banner" id="top-banner">
+        Oferta especial para <span id="user-city">sua cidade</span> e região!
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">vitapet <span>natural</span></div>
+        <div class="nav-icons">
+            <span><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" width="22" alt="Perfil"></span>
+            <span><img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" width="22" alt="Carrinho"></span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-image" id="main-container">
+                <button class="nav-arrow arrow-left" onclick="prevImage()">❮</button>
+                <img id="main-photo" src="img/head1.webp" alt="Protocolo VitaPet Natural">
+                <button class="nav-arrow arrow-right" onclick="nextImage()">❯</button>
+            </div>
+
+            <div class="carousel-images" id="thumb-container">
+                <img class="carousel-img active" src="img/head1.webp" onclick="changeImage(this, 0)" alt="Foto 1">
+                <img class="carousel-img" src="img/head2.webp" onclick="changeImage(this, 1)" alt="Foto 2">
+                <img class="carousel-img" src="img/head3.webp" onclick="changeImage(this, 2)" alt="Foto 3">
+                <img class="carousel-img" src="img/head4.webp" onclick="changeImage(this, 3)" alt="Foto 4">
+            </div>
+
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="review-count">102 avaliações</span>
+            </div>
+
+            <h1 class="product-title">Protocolo VitaPet Natural</h1>
+            <p class="product-subtitle">Simples. Científico. Eficaz.</p>
+            <p class="product-description">Para quem quer resultado real, rápido e economia inteligente.</p>
+
+            <div class="benefits">
+                <div class="benefit-item">
+                    <span class="check-icon">✓</span>
+                    <span class="benefit-text">Fórmula profissional revelada passo a passo</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="check-icon">✓</span>
+                    <span class="benefit-text">Lista completa de ingredientes e fornecedores</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="check-icon">✓</span>
+                    <span class="benefit-text">Renda até 10x mais barato que produtos prontos</span>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <div class="price">
+                    <span class="price-current">R$ 37,00</span>
+                    <span class="price-original">R$ 149,00</span>
+                    <span class="discount-badge">⭐ ECONOMIZE 75%</span>
+                </div>
+            </div>
+
+            <div class="quantity-selector">
+                <label class="quantity-label">Acesso Imediato</label>
+                <select class="quantity-select">
+                    <option>Protocolo VitaPet Natural - Acesso Vitalício</option>
+                </select>
+            </div>
+
+            <button class="cta-button">QUERO COM DESCONTO AGORA</button>
+
+            <div class="info-icons">
+                <div class="info-icon-item">
+                    <div class="info-icon">
+                        <!-- COLOQUE IMAGEM AQUI: img/icon-pessoas.png -->
+                        <img src="img/+3.800 tutores preparando.webp" alt="Pessoas">
+                    </div>
+                    <div>+3.800 tutores preparando</div>
+                </div>
+                <div class="info-icon-item">
+                    <div class="info-icon">
+                        <!-- COLOQUE IMAGEM AQUI: img/icon-celular.png -->
+                        <img src="img/acesso.png" alt="Celular">
+                    </div>
+                    <div>Acesso instantâneo</div>
+                </div>
+                <div class="info-icon-item">
+                    <div class="info-icon">
+                        <!-- COLOQUE IMAGEM AQUI: img/icon-garantia.png -->
+                        <img src="img/60dias.png" alt="Garantia">
+                    </div>
+                    <div>60 dias de garantia</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO VETERINÁRIA -->
+        <section class="expert-section">
+            <div class="expert-image">
+                <!-- COLOQUE IMAGEM AQUI: img/veterinaria.jpg -->
+                <img src="img/veterinaria.png" alt="Dra Paula Traldi">
+            </div>
+            <div class="expert-content">
+                <h2>Criado Por Veterinária com Mais de 20 Anos de Experiência</h2>
+                <p><strong>"Desenvolvi esta fórmula natural após anos de pesquisa e prática clínica. Cada ingrediente foi cuidadosamente selecionado para oferecer o máximo de benefício ao seu pet."</strong></p>
+                <p>Esta mesma fórmula natural já ajudou mais de 180 mil cães a terem mais saúde, disposição e qualidade de vida. Agora você pode preparar em casa com segurança e economia.</p>
+                <div class="expert-signature">
+                    DRA Carolina Vasconcelos - CRMV SP 23.5277
+                </div>
+            </div>
+        </section>
+
+        <!-- AVALIAÇÕES -->
+        <section class="reviews-section">
+            <h2 class="reviews-title">Avaliações de Tutores</h2>
+            
+            <div class="reviews-grid">
+                <div class="rating-summary">
+                    <div class="rating-average">4.71</div>
+                    <div class="rating-stars">★★★★★</div>
+                    <div class="rating-count">102 avaliações verificadas</div>
+                    
+                    <div class="rating-bars">
+                        <div class="rating-bar">
+                            <div class="rating-bar-label">5 ⭐</div>
+                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 71%;"></div></div>
+                        </div>
+                        <div class="rating-bar">
+                            <div class="rating-bar-label">4 ⭐</div>
+                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 29%;"></div></div>
+                        </div>
+                        <div class="rating-bar">
+                            <div class="rating-bar-label">3 ⭐</div>
+                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 0%;"></div></div>
+                        </div>
+                        <div class="rating-bar">
+                            <div class="rating-bar-label">2 ⭐</div>
+                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 0%;"></div></div>
+                        </div>
+                        <div class="rating-bar">
+                            <div class="rating-bar-label">1 ⭐</div>
+                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 0%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews-list">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <!-- COLOQUE IMAGEM AQUI: img/dep1.png -->
+                                <img src="img/dep1.png" alt="Cristiane">
+                            </div>
+                            <div class="review-info">
+                                <h4>Cristiane Moura</h4>
+                                <div class="review-stars">★★★★★</div>
+                                <div class="review-date">25/05/25</div>
+                            </div>
+                        </div>
+                        <p class="review-text"><strong>Preparei seguindo a fórmula e economizei MUITO</strong><br>Finalmente posso dar suplemento premium sem pesar no bolso. Fiz para 6 meses! Ele parou de se coçar a noite toda.</p>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <!-- COLOQUE IMAGEM AQUI: img/avatar2.jpg -->
+                                <img src="img/dep2.webp" alt="Michele">
+                            </div>
+                            <div class="review-info">
+                                <h4>Michele Oliveira</h4>
+                                <div class="review-stars">★★★★★</div>
+                                <div class="review-date">23/05/25</div>
+                            </div>
+                        </div>
+                        <p class="review-text"><strong>Fórmula clara e completa</strong><br>Achei que seria complicado mas é super simples. 15 dias e ele parou de lamber as patas compulsivamente 👅</p>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <!-- COLOQUE IMAGEM AQUI: img/dep3.jpg -->
+                                <img src="img/dep3.jpg" alt="Caroline">
+                            </div>
+                            <div class="review-info">
+                                <h4>Caroline Alves</h4>
+                                <div class="review-stars">★★★★★</div>
+                                <div class="review-date">22/05/25</div>
+                            </div>
+                        </div>
+                        <p class="review-text"><strong>Qualidade igual, preço justo</strong><br>O pet shop perguntou que suplemento eu uso kkkkk é a fórmula VitaPet mesmo. Pelo dele tá sedoso de novo!</p>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="review-avatar">
+                                <!-- COLOQUE IMAGEM AQUI: img/dep4.jpg -->
+                                <img src="img/dep4.png" alt="Gabriela">
+                            </div>
+                            <div class="review-info">
+                                <h4>Gabriela Costa</h4>
+                                <div class="review-stars">★★★★★</div>
+                                <div class="review-date">20/05/25</div>
+                            </div>
+                        </div>
+                        <p class="review-text"><strong>Valeu cada centavo</strong><br>Simplesmente parou de se lamber compulsivamente ✋🏼 e ainda sobrou para 4 meses. Economia absurda!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-photos">
+                <div class="client-photo">
+                    <!-- COLOQUE IMAGEM AQUI: img/cliente1.jpg -->
+                    <img src="img/fotodep.avif" alt="Cliente 1">
+                </div>
+                <div class="client-photo">
+                    <!-- COLOQUE IMAGEM AQUI: img/cliente2.jpg -->
+                    <img src="img/fotodep2.avif" alt="Cliente 2">
+                </div>
+                <div class="client-photo">
+                    <!-- COLOQUE IMAGEM AQUI: img/cliente3.jpg -->
+                    <img src="img/fotodep3.avif" alt="Cliente 3">
+                </div>
+                <div class="client-photo">
+                    <!-- COLOQUE IMAGEM AQUI: img/cliente4.jpg -->
+                    <img src="img/fotodep4.png" alt="Cliente 4">
+                </div>
+            </div>
+        </section>
+
+        <!-- O QUE VOCÊ RECEBE -->
+        <section class="two-column-section">
+            <div class="two-column-image">
+                <!-- COLOQUE IMAGEM AQUI: img/protocolo.jpg -->
+                <img src="img/receber.png" alt="Protocolo VitaPet">
+            </div>
+            <div class="two-column-content">
+                <h2>O Que Você Recebe no Protocolo VitaPet</h2>
+                <p><strong>✓ Fórmula Profissional Passo a Passo</strong><br>
+                Lista exata de ingredientes com dosagens precisas para resultados profissionais</p>
+                
+                <p><strong>✓ Fornecedores Verificados</strong><br>
+                Links diretos para comprar todos os ingredientes com segurança e procedência</p>
+                
+                <p><strong>✓ Modo de Preparo Ilustrado</strong><br>
+                Passo a passo visual para você preparar sem erros, mesmo sendo iniciante</p>
+                
+                <p><strong>✓ Tabela de Dosagem por Peso</strong><br>
+                Quanto dar para seu cão de acordo com o porte (pequeno, médio ou grande)</p>
+            </div>
+        </section>
+
+        <!-- CINCO BENEFÍCIOS -->
+        <section class="five-benefits">
+            <h2 class="five-benefits-title">Cinco Benefícios da Fórmula VitaPet</h2>
+            
+            <div class="five-benefits-grid">
+                <div class="five-benefits-left">
+                    <div class="benefit-item-large">
+                        <div class="benefit-number">1</div>
+                        <div>
+                            <h3>Coceira e Lambedura</h3>
+                            <p>Reduz desconfortos na pele e nas patas, trazendo mais alívio e tranquilidade no dia a dia</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item-large">
+                        <div class="benefit-number">2</div>
+                        <div>
+                            <h3>Pele e Pelagem</h3>
+                            <p>Deixa a pele protegida e o pelo mais bonito, sem vermelhidão, feridas ou queda excessiva</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item-large">
+                        <div class="benefit-number">3</div>
+                        <div>
+                            <h3>Imunidade Forte</h3>
+                            <p>Reforça as defesas naturais do seu cão contra alergias, infecções e doenças comuns</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item-large">
+                        <div class="benefit-number">4</div>
+                        <div>
+                            <h3>Digestão e Fezes</h3>
+                            <p>Equilibra o intestino e melhora a qualidade das fezes, reduzindo mau cheiro e desconfortos</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item-large">
+                        <div class="benefit-number">5</div>
+                        <div>
+                            <h3>Energia e Bem-estar</h3>
+                            <p>Garante mais disposição, vitalidade e um comportamento mais calmo e equilibrado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="five-benefits-image">
+                    <!-- COLOQUE IMAGEM AQUI: img/cachorro-feliz.jpg -->
+                    <img src="img/caosaudavel.png" alt="Cão Saudável">
+                </div>
+            </div>
+        </section>
+
+        <!-- INGREDIENTES -->
+        <section class="ingredients-section">
+            <h2 class="ingredients-title">Ingredientes Revelados na Fórmula</h2>
+            
+            <div class="ingredients-grid">
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <!-- COLOQUE IMAGEM AQUI: img/microalgas.jpg -->
+                        <img src="img/Microalgas.webp" alt="Microalgas">
+                    </div>
+                    <h3>Microalgas<br>Premium</h3>
+                    <p>Fonte de ômega 3 DHA que nutre cérebro, pele e fortalece a imunidade</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <!-- COLOQUE IMAGEM AQUI: img/probioticos.jpg -->
+                        <img src="img/Probióticos.webp" alt="Probióticos">
+                    </div>
+                    <h3>Probióticos<br>Premium</h3>
+                    <p>Bacillus, Lactobacillus e Enterococcus para intestino forte e imunidade blindada</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <!-- COLOQUE IMAGEM AQUI: img/vitaminas.jpg -->
+                        <img src="img/Vitaminas Complexo B.webp" alt="Vitaminas">
+                    </div>
+                    <h3>Vitaminas<br>Complexo B</h3>
+                    <p>Para energia diária, sistema nervoso forte e disposição turbinada</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <!-- COLOQUE IMAGEM AQUI: img/triptofano.jpg -->
+                        <img src="img/L-TriptofanoL.webp" alt="L-Triptofano">
+                    </div>
+                    <h3>L-Triptofano<br>Puro</h3>
+                    <p>Aminoácido essencial para calma, equilíbrio emocional e sono de qualidade</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <!-- COLOQUE IMAGEM AQUI: img/omega3.jpg -->
+                        <img src="img/omega3.webp" alt="Ômega 3">
+                    </div>
+                    <h3>Ômega 3 DHA<br>Concentrado</h3>
+                    <p>Saúde do cérebro, coração, pele e pelagem radiante</p>
+                </div>
+
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <!-- COLOQUE IMAGEM AQUI: img/minerais.jpg -->
+                        <img src="img/minerais.webp" alt="Minerais">
+                    </div>
+                    <h3>Minerais<br>Quelatos</h3>
+                    <p>Máxima absorção para ossos, dentes e imunidade sempre em dia</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; color: #666; font-size: 15px;">
+                <strong>Todos com fornecedores, dosagens e modo de preparo detalhados</strong>
+            </p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <h2 class="faq-title">Perguntas Frequentes</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>A fórmula é complicada de fazer?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Não! É um passo a passo simples que qualquer pessoa consegue seguir. Leva menos de 20 minutos para preparar. Fornecemos todas as instruções detalhadas e ilustradas.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Onde compro os ingredientes?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Fornecemos lista completa com links de fornecedores confiáveis que entregam em todo Brasil. Você compra tudo online com segurança e procedência garantida.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Quanto vou gastar para fazer?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Em média R$ 120-150 para preparar 6 meses de suplemento (vs. R$ 774 comprando pronto). A economia é de até 81% no longo prazo.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Quanto tempo dura o suplemento que preparo?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Seguindo as instruções de armazenamento que fornecemos, dura de 6 a 12 meses. Você pode preparar uma grande quantidade de uma vez e economizar muito.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Como recebo a fórmula?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Por e-mail, em até 5 minutos após a confirmação do pagamento. Formato PDF para ler em qualquer dispositivo (celular, tablet ou computador). Acesso vitalício.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Serve para qualquer porte de cão?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Sim! A fórmula inclui tabela de dosagem completa para cães pequenos, médios e grandes. Você ajusta a quantidade conforme o peso do seu pet.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>É seguro fazer em casa?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutamente! A fórmula é a mesma base científica validada por veterinários e já ajudou mais de 180 mil cães. Incluímos todas as orientações de segurança e boas práticas.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>E se eu não conseguir fazer?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Temos suporte dedicado via e-mail para tirar todas as suas dúvidas. Além disso, oferecemos garantia incondicional de 60 dias. Se não der certo, você recebe 100% do seu dinheiro de volta.
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>VitaPet Natural</h3>
+        <p>Fórmula Profissional Para a Saúde do Seu Pet</p>
+
+        <div class="footer-links">
+            <span class="footer-link">Sobre Nós</span>
+            <span class="footer-link">Política de Privacidade</span>
+            <span class="footer-link">Termos de Uso</span>
+            <span class="footer-link">Fale Conosco</span>
+        </div>
+
+        <div class="social-links">
+            <a href="#" class="social-link">
+                <!-- COLOQUE IMAGEM AQUI: img/facebook-icon.png -->
+                <img src="img/facebook.png" alt="Facebook">
+            </a>
+            <a href="#" class="social-link">
+                <!-- COLOQUE IMAGEM AQUI: img/instagram-icon.png -->
+                <img src="img/insta.jpg" alt="Instagram">
+            </a>
+            <a href="#" class="social-link">
+                <!-- COLOQUE IMAGEM AQUI: img/whatsapp-icon.png -->
+                <img src="img/whats.jpg" alt="WhatsApp">
+            </a>
+            <a href="#" class="social-link">
+                <!-- COLOQUE IMAGEM AQUI: img/email-icon.png -->
+                <img src="img/titok.png" alt="Email">
+            </a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 VitaPet Natural. Todos os direitos reservados.</p>
+            <p>Desenvolvido com ❤️ para a saúde e bem-estar dos seus pets</p>
+            <p style="margin-top: 1rem; font-size: 11px;">Esta é uma fórmula educacional. Consulte seu veterinário antes de iniciar qualquer suplementação.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <button class="float-button" title="Contato WhatsApp">
+        <!-- COLOQUE IMAGEM AQUI: img/whatsapp-white.png -->
+        <img src="img/whatsapp-white.png" alt="WhatsApp">
+    </button>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            answer.classList.toggle('open');
+            toggle.classList.toggle('open');
+        }
+
+        // Detecta cidade do usuário
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                const city = data.city || 'sua cidade';
+                document.getElementById('user-city').innerText = city;
+            })
+            .catch(() => {
+                document.getElementById('user-city').innerText = 'sua cidade';
+            });
+
+        // Sistema de galeria de imagens
+        const images = [
+            "img/head1.webp",
+            "img/head2.webp",
+            "img/head3.webp",
+            "img/head4.webp",
+        ];
+        
+        let currentIndex = 0;
+        const mainPhoto = document.getElementById('main-photo');
+        const thumbnails = document.querySelectorAll('.carousel-img');
+
+        function updateGallery(index) {
+            currentIndex = index;
+            mainPhoto.src = images[currentIndex];
+            
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === currentIndex);
+            });
+
+            const activeThumb = thumbnails[currentIndex];
+            activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+
+        function changeImage(element, index) {
+            updateGallery(index);
+        }
+
+        function nextImage() {
+            let next = (currentIndex + 1) % images.length;
+            updateGallery(next);
+        }
+
+        function prevImage() {
+            let prev = (currentIndex - 1 + images.length) % images.length;
+            updateGallery(prev);
+        }
+    </script>
+</body>
+</html>
