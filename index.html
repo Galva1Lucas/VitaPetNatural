@@ -1855,15 +1855,22 @@
         /* ========================================
            DETECTA CIDADE
         ======================================== */
-        fetch('https://ipapi.co/json/')
-            .then(response => response.json())
-            .then(data => {
-                const city = data.city || 'sua cidade';
-                document.getElementById('user-city').innerText = city;
+        // Detecta cidade do usuário (ipwho.is = HTTPS, funciona em mobile)
+        fetch('https://ipwho.is/')
+            .then(r => r.json())
+            .then(d => {
+                if (d.city) {
+                    document.getElementById('user-city').innerText = d.city;
+                } else { throw new Error(); }
             })
-            .catch(() => {
-                document.getElementById('user-city').innerText = 'sua cidade';
-            });
+            .catch(() =>
+                fetch('https://ipapi.co/json/')
+                    .then(r => r.json())
+                    .then(d => {
+                        if (d.city) document.getElementById('user-city').innerText = d.city;
+                    })
+                    .catch(() => {})
+            );
 
         /* ========================================
            GALERIA DE IMAGENS
