@@ -1320,7 +1320,7 @@
 <body>
     <!-- TOP BANNER -->
     <div class="top-banner" id="top-banner">
-        Oferta especial para <span id="user-city">sua cidade</span> e região!
+        Oferta especial para <span id="user-city">sua cidade</span> e região! &nbsp;·&nbsp; Válida até <span id="offer-date"></span>
     </div>
 
     <!-- NAVBAR -->
@@ -1855,21 +1855,43 @@
         /* ========================================
            DETECTA CIDADE
         ======================================== */
-        // Detecta cidade do usuário (ipwho.is = HTTPS, funciona em mobile)
-        fetch('https://ipwho.is/')
+        // Data da oferta — atualiza sozinha todo dia
+        (function() {
+            const hoje = new Date();
+            const dia  = String(hoje.getDate()).padStart(2, '0');
+            const mes  = String(hoje.getMonth() + 1).padStart(2, '0');
+            const ano  = hoje.getFullYear();
+            document.getElementById('offer-date').textContent = dia + '/' + mes + '/' + ano;
+        })();
+
+        // Detecta cidade — 3 APIs HTTPS em cascata
+        function aplicarCidade(city) {
+            if (city && city.trim()) {
+                document.getElementById('user-city').innerText = city.trim();
+                return true;
+            }
+            return false;
+        }
+
+        fetch('https://get.geojs.io/v1/ip/geo.json')
             .then(r => r.json())
             .then(d => {
-                if (d.city) {
-                    document.getElementById('user-city').innerText = d.city;
-                } else { throw new Error(); }
+                if (aplicarCidade(d.city)) return;
+                throw new Error();
             })
             .catch(() =>
-                fetch('https://ipapi.co/json/')
+                fetch('https://ipwho.is/')
                     .then(r => r.json())
                     .then(d => {
-                        if (d.city) document.getElementById('user-city').innerText = d.city;
+                        if (aplicarCidade(d.city)) return;
+                        throw new Error();
                     })
-                    .catch(() => {})
+                    .catch(() =>
+                        fetch('https://ipapi.co/json/')
+                            .then(r => r.json())
+                            .then(d => aplicarCidade(d.city))
+                            .catch(() => {})
+                    )
             );
 
         /* ========================================
