@@ -1486,7 +1486,7 @@
                             <div class="review-info">
                                 <h4>Cristiane Moura</h4>
                                 <div class="review-stars">★★★★★</div>
-                                <div class="review-date">25/05/25</div>
+                                <div class="review-date" id="review-date-1"></div>
                             </div>
                         </div>
                         <p class="review-text"><strong>Preparei seguindo a fórmula e economizei MUITO</strong><br>Finalmente posso dar suplemento premium sem pesar no bolso. Fiz para 6 meses! Ele parou de se coçar a noite toda.</p>
@@ -1500,7 +1500,7 @@
                             <div class="review-info">
                                 <h4>Michele Oliveira</h4>
                                 <div class="review-stars">★★★★★</div>
-                                <div class="review-date">23/05/25</div>
+                                <div class="review-date" id="review-date-2"></div>
                             </div>
                         </div>
                         <p class="review-text"><strong>Fórmula clara e completa</strong><br>Achei que seria complicado mas é super simples. 15 dias e ele parou de lamber as patas compulsivamente 👅</p>
@@ -1514,7 +1514,7 @@
                             <div class="review-info">
                                 <h4>Caroline Alves</h4>
                                 <div class="review-stars">★★★★★</div>
-                                <div class="review-date">22/05/25</div>
+                                <div class="review-date" id="review-date-3"></div>
                             </div>
                         </div>
                         <p class="review-text"><strong>Qualidade igual, preço justo</strong><br>O pet shop perguntou que suplemento eu uso kkkkk é a fórmula VitaPet mesmo. Pelo dele tá sedoso de novo!</p>
@@ -1528,7 +1528,7 @@
                             <div class="review-info">
                                 <h4>Gabriela Costa</h4>
                                 <div class="review-stars">★★★★★</div>
-                                <div class="review-date">20/05/25</div>
+                                <div class="review-date" id="review-date-4"></div>
                             </div>
                         </div>
                         <p class="review-text"><strong>Valeu cada centavo</strong><br>Simplesmente parou de se lamber compulsivamente ✋🏼 e ainda sobrou para 4 meses. Economia absurda!</p>
@@ -1987,6 +1987,41 @@
             // Repete a cada 15 seg
             setInterval(showNotification, 15000);
         }, 5000);
+
+        /* ========================================
+           DATAS DINÂMICAS DOS DEPOIMENTOS
+        ======================================== */
+        (function() {
+            function formatDate(date) {
+                const d = String(date.getDate()).padStart(2, '0');
+                const m = String(date.getMonth() + 1).padStart(2, '0');
+                const y = String(date.getFullYear()).slice(-2);
+                return d + '/' + m + '/' + y;
+            }
+
+            function subtractDays(date, days) {
+                const d = new Date(date);
+                d.setDate(d.getDate() - days);
+                return d;
+            }
+
+            const hoje = new Date();
+
+            // Cristiane — há 3 horas (mostra hora exata)
+            const hora3 = new Date(hoje.getTime() - 3 * 60 * 60 * 1000);
+            const h = String(hora3.getHours()).padStart(2, '0');
+            const min = String(hora3.getMinutes()).padStart(2, '0');
+            document.getElementById('review-date-1').textContent = 'hoje às ' + h + ':' + min;
+
+            // Michele — ontem com data
+            document.getElementById('review-date-2').textContent = 'ontem · ' + formatDate(subtractDays(hoje, 1));
+
+            // Caroline — 2 dias atrás
+            document.getElementById('review-date-3').textContent = formatDate(subtractDays(hoje, 2));
+
+            // Gabriela — 3 dias atrás
+            document.getElementById('review-date-4').textContent = formatDate(subtractDays(hoje, 3));
+        })();
     </script>
 </body>
 </html>
