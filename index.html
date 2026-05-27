@@ -1207,13 +1207,206 @@
             50% { opacity: 0.2; }
         }
 
-        /* RESPONSIVO */
+        /* ========================================
+           SEÇÃO HEADLINE SIMPLES
+        ======================================== */
+        .headline-section {
+            background: white;
+            padding: 2rem 2rem 1rem 2rem;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .headline-main {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .headline-sub {
+            font-size: 18px;
+            color: #666;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           SEÇÃO VSL
+        ======================================== */
+        .vsl-section {
+            background: white;
+            padding: 1rem 2rem 2rem 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .vsl-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .vsl-label {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #00a86b;
+            margin-bottom: 1.5rem;
+        }
+
+        /* SEÇÃO PROVA SOCIAL RÁPIDA */
+        .social-proof-quick {
+            background: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            margin-bottom: 0;
+            border-top: 1px solid #eee;
+        }
+
+        .social-proof-quick-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .social-proof-quick-text strong {
+            color: #00a86b;
+        }
+
+        .vsl-player {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 9 / 16;
+            max-height: 600px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 0 auto;
+        }
+
+        .vsl-player iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .vsl-player video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ========================================
+           SEÇÃO DOR / PAIN
+        ======================================== */
+        .pain-section {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .pain-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #c0392b;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .pain-description {
+            font-size: 16px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           SEÇÃO QUEBRA DE CRENÇA
+        ======================================== */
+        .belief-break-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .belief-image {
+            width: 100%;
+            height: 300px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .belief-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .belief-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .belief-content p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           SEÇÃO REVELAÇÃO FÓRMULA
+        ======================================== */
+        .formula-reveal-section {
+            background: linear-gradient(135deg, #f0faf5 0%, #e6f7f0 100%);
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-left: 4px solid #00a86b;
+            border-right: 4px solid #00a86b;
+        }
+
+        .formula-reveal-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .formula-reveal-text {
+            font-size: 16px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .formula-reveal-highlight {
+            color: #00a86b;
+            font-weight: 700;
+        }
+
         @media (max-width: 768px) {
             .expert-section,
             .reviews-grid,
             .two-column-section,
             .five-benefits-grid,
-            .ingredients-grid {
+            .ingredients-grid,
+            .belief-break-section {
                 grid-template-columns: 1fr;
             }
 
@@ -1293,21 +1486,206 @@
                 height: 250px;
             }
 
+            /* HEADLINES E TÍTULOS */
+            .headline-section {
+                padding: 2rem 1rem;
+            }
+
+            .headline-main {
+                font-size: 26px;
+                margin-bottom: 1rem;
+            }
+
+            .headline-sub {
+                font-size: 16px;
+            }
+
+            .vsl-section {
+                padding: 1.5rem 1rem;
+            }
+
+            .social-proof-quick {
+                padding: 1.5rem 1rem;
+            }
+
+            .social-proof-quick-text {
+                font-size: 15px;
+            }
+
+            .pain-section {
+                padding: 2rem 1rem;
+            }
+
+            .pain-title {
+                font-size: 22px;
+            }
+
+            .pain-description {
+                font-size: 15px;
+            }
+
+            .belief-break-section {
+                padding: 2rem 1rem;
+                grid-template-columns: 1fr;
+            }
+
+            .belief-content h2 {
+                font-size: 20px;
+            }
+
+            .belief-content p {
+                font-size: 15px;
+            }
+
+            .formula-reveal-section {
+                padding: 2rem 1rem;
+            }
+
+            .formula-reveal-title {
+                font-size: 22px;
+            }
+
+            .formula-reveal-text {
+                font-size: 15px;
+            }
+
+            /* PRODUCT SECTION */
             .product-title {
                 font-size: 20px;
+            }
+
+            .product-subtitle {
+                font-size: 16px;
+            }
+
+            .product-description {
+                font-size: 14px;
             }
 
             .price-current {
                 font-size: 24px;
             }
 
+            .benefit-text {
+                font-size: 14px;
+            }
+
+            /* EXPERT SECTION */
+            .expert-content h2 {
+                font-size: 18px;
+            }
+
+            .expert-content p {
+                font-size: 14px;
+            }
+
+            .expert-signature {
+                font-size: 13px;
+            }
+
+            /* BENEFITS */
+            .five-benefits-title {
+                font-size: 20px;
+            }
+
+            .benefit-item-large h3 {
+                font-size: 15px;
+            }
+
+            .benefit-item-large p {
+                font-size: 13px;
+            }
+
+            /* INGREDIENTS */
+            .ingredients-title {
+                font-size: 20px;
+            }
+
+            .ingredient-card h3 {
+                font-size: 15px;
+            }
+
+            .ingredient-card p {
+                font-size: 12px;
+            }
+
+            /* TWO COLUMN */
+            .two-column-content h2 {
+                font-size: 18px;
+            }
+
+            .two-column-content p {
+                font-size: 14px;
+            }
+
+            /* REVIEWS */
+            .reviews-title {
+                font-size: 18px;
+            }
+
+            .rating-average {
+                font-size: 36px;
+            }
+
+            .rating-stars {
+                font-size: 18px;
+            }
+
+            .review-info h4 {
+                font-size: 14px;
+            }
+
+            .review-text {
+                font-size: 13px;
+            }
+
+            .reviews-list .review-item {
+                grid-template-columns: 1fr !important;
+            }
+
+            .reviews-list .review-item > div:last-child {
+                height: 200px !important;
+            }
+
+            /* FAQ */
+            .faq-title {
+                font-size: 20px;
+            }
+
+            .faq-question {
+                font-size: 15px;
+            }
+
+            /* BUTTONS */
+            .cta-button {
+                font-size: 16px;
+                padding: 1rem;
+            }
+
+            .cta-subtitle {
+                font-size: 12px;
+            }
+
+            /* FOOTER */
             footer {
                 padding: 2rem 1rem;
+            }
+
+            footer h3 {
+                font-size: 16px;
+            }
+
+            footer p {
+                font-size: 13px;
             }
 
             .footer-links {
                 flex-direction: column;
                 gap: 1rem;
+            }
+
+            .footer-link {
+                font-size: 12px;
             }
 
             .social-proof-popup {
@@ -1333,104 +1711,86 @@
     </nav>
 
     <div class="container">
-        <!-- HERO SECTION -->
-        <section class="hero-section">
-            <div class="hero-image" id="main-container">
-                <button class="nav-arrow arrow-left" onclick="prevImage()">❮</button>
-                <img id="main-photo" src="img/head1.webp" alt="Protocolo VitaPet Natural">
-                <button class="nav-arrow arrow-right" onclick="nextImage()">❯</button>
-            </div>
+        <!-- SEÇÃO HEADLINE -->
+        <section class="headline-section">
+            <h1 class="headline-main">Seu cachorro se coça, lambe as patas ou perde muito pelo?</h1>
+            <p class="headline-sub">Conheça o protocolo inspirado nas fórmulas premium veterinárias que já ajudou milhares de tutores a economizar e cuidar melhor dos seus cães.</p>
+        </section>
 
-            <div class="carousel-images" id="thumb-container">
-                <img class="carousel-img active" src="img/head1.webp" onclick="changeImage(this, 0)" alt="Foto 1">
-                <img class="carousel-img" src="img/head2.webp" onclick="changeImage(this, 1)" alt="Foto 2">
-                <img class="carousel-img" src="img/head3.webp" onclick="changeImage(this, 2)" alt="Foto 3">
-                <img class="carousel-img" src="img/head4.webp" onclick="changeImage(this, 3)" alt="Foto 4">
-            </div>
+      <!-- SEÇÃO VSL -->
+<section class="vsl-section">
+    <div class="vsl-container">
+        <div class="vsl-label">👇 Assista o vídeo abaixo</div>
+        <div class="vsl-player">
+            <!-- WISTIA VIDEO EMBED COLOQUADO AQUI -->
+            <script src="https://fast.wistia.com/player.js" async></script>
+            <script src="https://fast.wistia.com/embed/lvl4lrnvtx.js" async type="module"></script>
+            <style>
+                wistia-player[media-id='lvl4lrnvtx']:not(:defined) { 
+                    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/lvl4lrnvtx/swatch'); 
+                    display: block; 
+                    filter: blur(5px); 
+                    padding-top:177.78%; 
+                }
+            </style> 
+            <wistia-player media-id="lvl4lrnvtx" aspect="0.5625"></wistia-player>
+        </div>
+    </div>
+</section>
 
-            <div class="rating">
-                <span class="stars">★★★★★</span>
-                <span class="review-count">102 avaliações</span>
-            </div>
-
-            <h1 class="product-title">Protocolo VitaPet Natural</h1>
-            <p class="product-subtitle">Simples. Científico. Eficaz.</p>
-            <p class="product-description">Para quem quer resultado real, rápido e economia inteligente.</p>
-
-            <div class="benefits">
-                <div class="benefit-item">
-                    <span class="check-icon">✓</span>
-                    <span class="benefit-text">Fórmula profissional revelada passo a passo</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="check-icon">✓</span>
-                    <span class="benefit-text">Lista completa de ingredientes e fornecedores</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="check-icon">✓</span>
-                    <span class="benefit-text">Renda até 10x mais barato que produtos prontos</span>
-                </div>
-            </div>
-
-            <div class="price-section">
-                <div class="price">
-                    <span class="price-current">R$ 37,00</span>
-                    <span class="price-original">R$ 149,00</span>
-                    <span class="discount-badge">⭐ ECONOMIZE 75%</span>
-                </div>
-            </div>
-
-            <div class="quantity-selector">
-                <label class="quantity-label">Acesso Imediato</label>
-                <select class="quantity-select">
-                    <option>Protocolo VitaPet Natural - Acesso Vitalício</option>
-                </select>
-            </div>
-
-            <!-- CTA 1 - HERO (com pulso) -->
-            <a href="https://go.perfectpay.com.br/PPU38CQAPQI" target="_blank" style="display:block; text-decoration:none;">
-                <button class="cta-button">🐾 QUERO COM DESCONTO AGORA</button>
+<!-- PROVA SOCIAL RÁPIDA -->
+<section class="social-proof-quick">
+    <p class="social-proof-quick-text">✅ <strong>+3.800 tutores</strong> já começaram a preparar em casa</p>
+</section>
+        <!-- CTA APÓS PROVA SOCIAL -->
+        <div style="background: white; padding: 1.5rem 2rem; text-align: center;">
+            <a href="https://go.perfectpay.com.br/PPU38CQAPQI" target="_blank" style="display:block; text-decoration:none; max-width:560px; margin:0 auto;">
+                <button class="cta-button" style="max-width:100%;">🐾 GARANTIR MINHA FÓRMULA AGORA</button>
             </a>
+        </div>
 
-            <!-- SELOS DE CONFIANÇA - logo abaixo do 1º botão -->
-            <div class="trust-banner">
-                <img src="img/bannersite.png" alt="Compra Segura · Dados Protegidos · Acesso Imediato"
-                     onerror="this.parentElement.innerHTML='<div class=\'trust-banner-fallback\'><div class=\'trust-item\'><span class=\'icon\'>🔒</span><span>Compra Segura</span></div><div class=\'trust-item\'><span class=\'icon\'>🛡️</span><span>Dados Protegidos</span></div><div class=\'trust-item\'><span class=\'icon\'>⚡</span><span>Acesso Imediato</span></div></div>'">
-            </div>
+        <!-- SEÇÃO DOR / PAIN POINTS -->
+        <section class="pain-section">
+            <h2 class="pain-title">A maioria dos tutores não sabe que pets com coceira crônica sofrem silenciosamente</h2>
+            <p class="pain-description">
+                Quando seu cão se coça, lambe as patas ou perde muito pelo, isso é apenas a ponta do iceberg. Por trás dessa comportamento há inflamação, desconforto e sofrimento que compromete a qualidade de vida do seu melhor amigo. A boa notícia? Existe solução.
+            </p>
+        </section>
 
-            <div class="info-icons">
-                <div class="info-icon-item">
-                    <div class="info-icon">
-                        <img src="img/pessoas.jpg" alt="Pessoas">
-                    </div>
-                    <div>+3.800 tutores preparando</div>
-                </div>
-                <div class="info-icon-item">
-                    <div class="info-icon">
-                        <img src="img/acesso.png" alt="Celular">
-                    </div>
-                    <div>Acesso instantâneo</div>
-                </div>
-                <div class="info-icon-item">
-                    <div class="info-icon">
-                        <img src="img/60dias.png" alt="Garantia">
-                    </div>
-                    <div>60 dias de garantia</div>
-                </div>
+        <!-- SEÇÃO QUEBRA DE CRENÇA -->
+        <section class="belief-break-section">
+            <div class="belief-content">
+                <h2>Não precisa gastar R$ 1.000+ por mês em suplementos veterinários</h2>
+                <p>A indústria de pet care lucra bilhões mantendo tutores presos em produtos caros e ineficientes. A verdade que ninguém fala:</p>
+                <p><strong>A fórmula para recuperar a saúde do seu cão está ao seu alcance — e custa 80% menos quando você prepara em casa.</strong></p>
+                <p style="color: #00a86b; font-weight: 600; margin-top: 1.5rem;">✓ Ingredientes profissionais revelados</p>
+                <p style="color: #00a86b; font-weight: 600;">✓ Passo a passo ilustrado</p>
+                <p style="color: #00a86b; font-weight: 600;">✓ Resultado em 2-3 semanas</p>
             </div>
+            <div class="belief-image">
+                <img src="img/receber01.webp" alt="Protocolo Revelado">
+            </div>
+        </section>
+
+        <!-- SEÇÃO REVELAÇÃO FÓRMULA -->
+        <section class="formula-reveal-section">
+            <h2 class="formula-reveal-title">Revelamos a Fórmula Premium do Veterinário</h2>
+            <p class="formula-reveal-text">
+                Passo a passo completo com <span class="formula-reveal-highlight">6 ingredientes premium revelados</span>, lista de fornecedores e modo de preparo que qualquer um consegue seguir. Transforme a saúde do seu cão em 20 minutos e economize para sempre.
+            </p>
         </section>
 
         <!-- SEÇÃO VETERINÁRIA -->
         <section class="expert-section">
             <div class="expert-image">
-                <img src="img/veterinaria.png" alt="Dra Paula Traldi">
+                <img src="img/veterinaria.webp"Dra Paula Traldi">
             </div>
             <div class="expert-content">
-                <h2>Criado Por Veterinária com Mais de 20 Anos de Experiência</h2>
+                <h2>Criado Por Veterinário com Mais de 20 Anos de Experiência</h2>
                 <p><strong>"Desenvolvi esta fórmula natural após anos de pesquisa e prática clínica. Cada ingrediente foi cuidadosamente selecionado para oferecer o máximo de benefício ao seu pet."</strong></p>
                 <p>Esta mesma fórmula natural já ajudou mais de 180 mil cães a terem mais saúde, disposição e qualidade de vida. Agora você pode preparar em casa com segurança e economia.</p>
                 <div class="expert-signature">
-                    DRA Carolina Vasconcelos - CRMV SP 23.5277
+                    DRA Fernando Vasconcelos - CRMV SP 23.5277
                 </div>
             </div>
         </section>
@@ -1438,145 +1798,10 @@
         <!-- CTA 2 - APÓS SEÇÃO VETERINÁRIA -->
         <div class="cta-section-mid">
             <a href="https://go.perfectpay.com.br/PPU38CQAPQI" target="_blank" style="display:block; text-decoration:none; max-width:560px; margin:0 auto;">
-                <button class="cta-button" style="max-width:100%;">✅ SIM! QUERO A FÓRMULA DA VETERINÁRIA</button>
+                <button class="cta-button" style="max-width:100%;">✅ SIM! QUERO A FÓRMULA DO VETERINÁRIO</button>
             </a>
             <p class="cta-subtitle">🔒 Pagamento 100% seguro &nbsp;·&nbsp; ⚡ Acesso em minutos &nbsp;·&nbsp; 💰 60 dias de garantia</p>
         </div>
-
-        <!-- AVALIAÇÕES -->
-        <section class="reviews-section">
-            <h2 class="reviews-title">Avaliações de Tutores</h2>
-            
-            <div class="reviews-grid">
-                <div class="rating-summary">
-                    <div class="rating-average">4.71</div>
-                    <div class="rating-stars">★★★★★</div>
-                    <div class="rating-count">102 avaliações verificadas</div>
-                    
-                    <div class="rating-bars">
-                        <div class="rating-bar">
-                            <div class="rating-bar-label">5 ⭐</div>
-                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 71%;"></div></div>
-                        </div>
-                        <div class="rating-bar">
-                            <div class="rating-bar-label">4 ⭐</div>
-                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 29%;"></div></div>
-                        </div>
-                        <div class="rating-bar">
-                            <div class="rating-bar-label">3 ⭐</div>
-                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 0%;"></div></div>
-                        </div>
-                        <div class="rating-bar">
-                            <div class="rating-bar-label">2 ⭐</div>
-                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 0%;"></div></div>
-                        </div>
-                        <div class="rating-bar">
-                            <div class="rating-bar-label">1 ⭐</div>
-                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 0%;"></div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="reviews-list">
-                    <div class="review-item">
-                        <div class="review-header">
-                            <div class="review-avatar">
-                                <img src="img/dep1.png" alt="Cristiane">
-                            </div>
-                            <div class="review-info">
-                                <h4>Cristiane Moura</h4>
-                                <div class="review-stars">★★★★★</div>
-                                <div class="review-date" id="review-date-1"></div>
-                            </div>
-                        </div>
-                        <p class="review-text"><strong>Preparei seguindo a fórmula e economizei MUITO</strong><br>Finalmente posso dar suplemento premium sem pesar no bolso. Fiz para 6 meses! Ele parou de se coçar a noite toda.</p>
-                    </div>
-
-                    <div class="review-item">
-                        <div class="review-header">
-                            <div class="review-avatar">
-                                <img src="img/dep2.webp" alt="Michele">
-                            </div>
-                            <div class="review-info">
-                                <h4>Michele Oliveira</h4>
-                                <div class="review-stars">★★★★★</div>
-                                <div class="review-date" id="review-date-2"></div>
-                            </div>
-                        </div>
-                        <p class="review-text"><strong>Fórmula clara e completa</strong><br>Achei que seria complicado mas é super simples. 15 dias e ele parou de lamber as patas compulsivamente 👅</p>
-                    </div>
-
-                    <div class="review-item">
-                        <div class="review-header">
-                            <div class="review-avatar">
-                                <img src="img/dep3.jpg" alt="Caroline">
-                            </div>
-                            <div class="review-info">
-                                <h4>Caroline Alves</h4>
-                                <div class="review-stars">★★★★★</div>
-                                <div class="review-date" id="review-date-3"></div>
-                            </div>
-                        </div>
-                        <p class="review-text"><strong>Qualidade igual, preço justo</strong><br>O pet shop perguntou que suplemento eu uso kkkkk é a fórmula VitaPet mesmo. Pelo dele tá sedoso de novo!</p>
-                    </div>
-
-                    <div class="review-item">
-                        <div class="review-header">
-                            <div class="review-avatar">
-                                <img src="img/dep4.png" alt="Gabriela">
-                            </div>
-                            <div class="review-info">
-                                <h4>Gabriela Costa</h4>
-                                <div class="review-stars">★★★★★</div>
-                                <div class="review-date" id="review-date-4"></div>
-                            </div>
-                        </div>
-                        <p class="review-text"><strong>Valeu cada centavo</strong><br>Simplesmente parou de se lamber compulsivamente ✋🏼 e ainda sobrou para 4 meses. Economia absurda!</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="client-photos">
-                <div class="client-photo">
-                    <img src="img/fotodep.avif" alt="Cliente 1">
-                </div>
-                <div class="client-photo">
-                    <img src="img/fotodep2.avif" alt="Cliente 2">
-                </div>
-                <div class="client-photo">
-                    <img src="img/fotodep3.avif" alt="Cliente 3">
-                </div>
-                <div class="client-photo">
-                    <img src="img/fotodep4.png" alt="Cliente 4">
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA 3 - APÓS AVALIAÇÕES (momento quente de conversão) -->
-        <div class="cta-section-reviews">
-            <a href="https://go.perfectpay.com.br/PPU38CQAPQI" target="_blank" style="display:block; text-decoration:none; max-width:560px; margin:0 auto;">
-                <button class="cta-button" style="max-width:100%;">🐶 QUERO PARA O MEU PET AGORA!</button>
-            </a>
-            <p class="cta-subtitle">Mais de 3.800 tutores já prepararam em casa &nbsp;·&nbsp; 🔒 100% seguro</p>
-        </div>
-
-        <!-- O QUE VOCÊ RECEBE -->
-        <section class="two-column-section">
-            <div class="two-column-content">
-                <h2>O Que Você Recebe no Protocolo VitaPet</h2>
-                <p><strong>✓ Fórmula Profissional Passo a Passo</strong><br>
-                Lista exata de ingredientes com dosagens precisas para resultados profissionais</p>
-                <p><strong>✓ Fornecedores Verificados</strong><br>
-                Links diretos para comprar todos os ingredientes com segurança e procedência</p>
-                <p><strong>✓ Modo de Preparo Ilustrado</strong><br>
-                Passo a passo visual para você preparar sem erros, mesmo sendo iniciante</p>
-                <p><strong>✓ Tabela de Dosagem por Peso</strong><br>
-                Quanto dar para seu cão de acordo com o porte (pequeno, médio ou grande)</p>
-            </div>
-            <div class="two-column-image">
-                <img src="img/receber.png" alt="Protocolo VitaPet">
-            </div>
-        </section>
 
         <!-- CINCO BENEFÍCIOS -->
         <section class="five-benefits">
@@ -1626,7 +1851,7 @@
                 </div>
 
                 <div class="five-benefits-image">
-                    <img src="img/caosaudavel.png" alt="Cão Saudável">
+                    <img src="img/caosaudavel.webp" alt="Cão Saudável">
                 </div>
             </div>
         </section>
@@ -1688,6 +1913,225 @@
             <p style="text-align: center; margin-top: 2rem; color: #666; font-size: 15px;">
                 <strong>Todos com fornecedores, dosagens e modo de preparo detalhados</strong>
             </p>
+        </section>
+
+        <!-- O QUE VOCÊ RECEBE -->
+        <section class="two-column-section">
+            <div class="two-column-content">
+                <h2>O Que Você Recebe no Protocolo VitaPet</h2>
+                <p><strong>✓ Fórmula Profissional Passo a Passo</strong><br>
+                Lista exata de ingredientes com dosagens precisas para resultados profissionais</p>
+                <p><strong>✓ Fornecedores Verificados</strong><br>
+                Links diretos para comprar todos os ingredientes com segurança e procedência</p>
+                <p><strong>✓ Modo de Preparo Ilustrado</strong><br>
+                Passo a passo visual para você preparar sem erros, mesmo sendo iniciante</p>
+                <p><strong>✓ Tabela de Dosagem por Peso</strong><br>
+                Quanto dar para seu cão de acordo com o porte (pequeno, médio ou grande)</p>
+            </div>
+            <div class="two-column-image">
+                <img src="img/receber.png" alt="Protocolo VitaPet">
+            </div>
+        </section>
+
+        <!-- AVALIAÇÕES -->
+        <section class="reviews-section">
+            <h2 class="reviews-title">Avaliações de Tutores</h2>
+            
+            <div class="reviews-grid">
+                <div class="rating-summary">
+                    <div class="rating-average">4.71</div>
+                    <div class="rating-stars">★★★★★</div>
+                    <div class="rating-count">102 avaliações verificadas</div>
+                    
+                    <div class="rating-bars">
+                        <div class="rating-bar">
+                            <div class="rating-bar-label">5 ⭐</div>
+                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 71%;"></div></div>
+                        </div>
+                        <div class="rating-bar">
+                            <div class="rating-bar-label">4 ⭐</div>
+                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 29%;"></div></div>
+                        </div>
+                        <div class="rating-bar">
+                            <div class="rating-bar-label">3 ⭐</div>
+                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 0%;"></div></div>
+                        </div>
+                        <div class="rating-bar">
+                            <div class="rating-bar-label">2 ⭐</div>
+                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 0%;"></div></div>
+                        </div>
+                        <div class="rating-bar">
+                            <div class="rating-bar-label">1 ⭐</div>
+                            <div class="rating-bar-progress"><div class="rating-bar-fill" style="width: 0%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews-list">
+                    <div class="review-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start;">
+                        <div>
+                            <div class="review-header">
+                                <div class="review-avatar">
+                                    <img src="img/dep1.png" alt="Cristiane">
+                                </div>
+                                <div class="review-info">
+                                    <h4>Cristiane Moura</h4>
+                                    <div class="review-stars">★★★★★</div>
+                                    <div class="review-date" id="review-date-1"></div>
+                                </div>
+                            </div>
+                            <p class="review-text"><strong>Preparei seguindo a fórmula e economizei MUITO</strong><br>Finalmente posso dar suplemento premium sem pesar no bolso. Fiz para 6 meses! Ele parou de se coçar a noite toda.</p>
+                        </div>
+                        <div style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden;">
+                            <img src="img/fotodep.avif" alt="Cachorro 1" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <div class="review-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start;">
+                        <div>
+                            <div class="review-header">
+                                <div class="review-avatar">
+                                    <img src="img/dep2.webp" alt="Michele">
+                                </div>
+                                <div class="review-info">
+                                    <h4>Michele Oliveira</h4>
+                                    <div class="review-stars">★★★★★</div>
+                                    <div class="review-date" id="review-date-2"></div>
+                                </div>
+                            </div>
+                            <p class="review-text"><strong>Fórmula clara e completa</strong><br>Achei que seria complicado mas é super simples. 15 dias e ele parou de lamber as patas compulsivamente 👅</p>
+                        </div>
+                        <div style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden;">
+                            <img src="img/fotodep2.avif" alt="Cachorro 2" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <div class="review-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start;">
+                        <div>
+                            <div class="review-header">
+                                <div class="review-avatar">
+                                    <img src="img/dep3.jpg" alt="Caroline">
+                                </div>
+                                <div class="review-info">
+                                    <h4>Caroline Alves</h4>
+                                    <div class="review-stars">★★★★★</div>
+                                    <div class="review-date" id="review-date-3"></div>
+                                </div>
+                            </div>
+                            <p class="review-text"><strong>Qualidade igual, preço justo</strong><br>O pet shop perguntou que suplemento eu uso kkkkk é a fórmula VitaPet mesmo. Pelo dele tá sedoso de novo!</p>
+                        </div>
+                        <div style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden;">
+                            <img src="img/fotodep3.avif" alt="Cachorro 3" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <div class="review-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start;">
+                        <div>
+                            <div class="review-header">
+                                <div class="review-avatar">
+                                    <img src="img/dep4.webp" alt="Gabriela">
+                                </div>
+                                <div class="review-info">
+                                    <h4>Gabriela Costa</h4>
+                                    <div class="review-stars">★★★★★</div>
+                                    <div class="review-date" id="review-date-4"></div>
+                                </div>
+                            </div>
+                            <p class="review-text"><strong>Valeu cada centavo</strong><br>Simplesmente parou de se lamber compulsivamente ✋🏼 e ainda sobrou para 4 meses. Economia absurda!</p>
+                        </div>
+                        <div style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden;">
+                            <img src="img/fotodep4.png" alt="Cachorro 4" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFERTA + PREÇO + CTA (HERO COM IMAGENS) -->
+        <section class="hero-section">
+            <div class="hero-image" id="main-container">
+                <button class="nav-arrow arrow-left" onclick="prevImage()">❮</button>
+                <img id="main-photo" src="img/head1.webp" alt="Protocolo VitaPet Natural">
+                <button class="nav-arrow arrow-right" onclick="nextImage()">❯</button>
+            </div>
+
+            <div class="carousel-images" id="thumb-container">
+                <img class="carousel-img active" src="img/head1.webp" onclick="changeImage(this, 0)" alt="Foto 1">
+                <img class="carousel-img" src="img/head2.webp" onclick="changeImage(this, 1)" alt="Foto 2">
+                <img class="carousel-img" src="img/head3.webp" onclick="changeImage(this, 2)" alt="Foto 3">
+                <img class="carousel-img" src="img/head4.webp" onclick="changeImage(this, 3)" alt="Foto 4">
+            </div>
+
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="review-count">102 avaliações</span>
+            </div>
+
+            <h2 class="product-title">Protocolo VitaPet Natural</h2>
+            <p class="product-subtitle">Simples. Científico. Eficaz.</p>
+            <p class="product-description">Para quem quer resultado real, rápido e economia inteligente.</p>
+
+            <div class="benefits">
+                <div class="benefit-item">
+                    <span class="check-icon">✓</span>
+                    <span class="benefit-text">Fórmula profissional revelada passo a passo</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="check-icon">✓</span>
+                    <span class="benefit-text">Lista completa de ingredientes e fornecedores</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="check-icon">✓</span>
+                    <span class="benefit-text">Renda até 10x mais barato que produtos prontos</span>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <div class="price">
+                    <span class="price-current">R$ 37,00</span>
+                    <span class="price-original">R$ 149,00</span>
+                    <span class="discount-badge">⭐ ECONOMIZE 75%</span>
+                </div>
+            </div>
+
+            <div class="quantity-selector">
+                <label class="quantity-label">Acesso Imediato</label>
+                <select class="quantity-select">
+                    <option>Protocolo VitaPet Natural - Acesso Vitalício</option>
+                </select>
+            </div>
+
+            <!-- CTA OFERTA -->
+            <a href="https://go.perfectpay.com.br/PPU38CQAPQI" target="_blank" style="display:block; text-decoration:none;">
+                <button class="cta-button">🐾 QUERO COM DESCONTO AGORA</button>
+            </a>
+
+            <!-- SELOS DE CONFIANÇA -->
+            <div class="trust-banner">
+                <img src="img/bannersite.png" alt="Compra Segura · Dados Protegidos · Acesso Imediato"
+                     onerror="this.parentElement.innerHTML='<div class=\'trust-banner-fallback\'><div class=\'trust-item\'><span class=\'icon\'>🔒</span><span>Compra Segura</span></div><div class=\'trust-item\'><span class=\'icon\'>🛡️</span><span>Dados Protegidos</span></div><div class=\'trust-item\'><span class=\'icon\'>⚡</span><span>Acesso Imediato</span></div></div>'">
+            </div>
+
+            <div class="info-icons">
+                <div class="info-icon-item">
+                    <div class="info-icon">
+                        <img src="img/pessoas.jpg" alt="Pessoas">
+                    </div>
+                    <div>+3.800 tutores preparando</div>
+                </div>
+                <div class="info-icon-item">
+                    <div class="info-icon">
+                        <img src="img/acesso.png" alt="Celular">
+                    </div>
+                    <div>Acesso instantâneo</div>
+                </div>
+                <div class="info-icon-item">
+                    <div class="info-icon">
+                        <img src="img/60dias.png" alt="Garantia">
+                    </div>
+                    <div>60 dias de garantia</div>
+                </div>
+            </div>
         </section>
 
         <!-- FAQ -->
